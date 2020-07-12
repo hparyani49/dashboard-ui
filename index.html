@@ -65,13 +65,13 @@
                 <div class="head-part">
                     <div class="font-600">Daily Visitor</div>
                     <div class="dropdown-container">
-                        <select class="dropdown-holder">
-                            <option class="each-option" value="$index" ng-repeat="month in months">
+                        <select class="dropdown-holder" ng-model="activeMonth">
+                            <option class="each-option" value={{$index}} ng-repeat="month in months track by $index">
                                 <div class="text-holder">{{month}}</div>
                             </option>
                         </select>
-                        <select class="dropdown-holder">
-                            <option class="each-option" value="$index" ng-repeat="year in years">
+                        <select class="dropdown-holder" ng-model="activeYear">
+                            <option class="each-option" value="$index" ng-repeat="year in years track by $index"">
                                 <div class="text-holder">{{year}}</div>
                             </option>
                         </select>
@@ -92,8 +92,12 @@
                         <div class="y-coord"></div>
                     </div>
                     <div class="x-axis bars">
-                        <div class="coord-bar" ng-repeat="visits in dailyVisits track by $index">
-                            <div ng-style="{'height': '{{visits}}px'}" class="coord-bar-filled"></div>
+                        <div class="coord-bar" ng-class="{'active':activeDay == $index}" ng-repeat="visits in dailyVisits track by $index">
+                            <div ng-style="{'height': '{{visits}}px'}" class="coord-bar-filled" ng-mouseover="focusDay($event, $index)" ng-mouseleave="blurDay($event, $index)"></div>
+                        </div>
+                        <div class="popover-holder" ng-style="popoverStyle">
+                            <div class="day">Day: {{popoverData.day}}</div>
+                            <div class="visits"><div class="flex-center"><div class="blue-dot"></div>Visitors:</div><div>{{popoverData.visitor}}</div></div>
                         </div>
                     </div>
                 </div>
