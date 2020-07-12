@@ -1,9 +1,4 @@
 angular.module('myApp', [])
-    // .directive('leftMenu', function () {
-    //     return {
-    //         templateUrl: 'left-menu.html'
-    //     };
-    // });
     .controller('header', ['$scope', function($scope){
         $scope.languages = [{
             language: 'ENG',
@@ -47,7 +42,7 @@ angular.module('myApp', [])
             isActive: false,
             iconClass: 'fa-credit-card'
         }, {
-            label: 'Lab/Experimental',
+            label: 'Lab / Experimental',
             isActive: false,
             iconClass: 'fa-glass'
         }];
@@ -66,7 +61,8 @@ angular.module('myApp', [])
             $scope.subSecActive = index;
         }
     }])
-    .controller('RightController', ['$scope', function ($scope) {
+    .controller('RightController', ['$scope','$timeout', function ($scope,$timeout) {
+        $scope.dailyVisits = [100,220,120,140,150,80,160,110,170,250,300,170,160,100,80,120,130,180,140,210,230,185,200,100,115,135,270,180,100,60,140].reverse();
         $scope.months = ['January','February','March','April','June','July','August','September','October','November','December']
         $scope.years = ['2018','2019','2020']
         $scope.tiles = [{
@@ -94,44 +90,43 @@ angular.module('myApp', [])
             isDown: false,
             graphData: []
         }];
-
         $scope.mostVisitedPages = [{
             pageName: '/store/',
-            visitor: '4,890',
-            uniqueVisitor: '3,985',
+            visitor: 4890,
+            uniqueVisitor: 3985,
             bounceRate: 81.56
         },{
             pageName: '/store/symbol',
-            visitor: '3,785',
-            uniqueVisitor: '3,182',
+            visitor: 3785,
+            uniqueVisitor: 3182,
             bounceRate: 62.56
         },{
             pageName: '/store/dashboard',
-            visitor: '2,985',
-            uniqueVisitor: '2,115',
+            visitor: 2985,
+            uniqueVisitor: 2115,
             bounceRate: 58.76
         },{
             pageName: '/store/webflow-cards',
-            visitor: '2,440',
-            uniqueVisitor: '1,789',
+            visitor: 2440,
+            uniqueVisitor: 1789,
             bounceRate: 39.59
         }]
 
         $scope.socialMediaTraffic = [{
             source: 'Instagram',
-            visitor: '3,550',
+            visitor: 3550,
             percentage: 80
         },{
             source: 'Facebook',
-            visitor: '2,236',
+            visitor: 2236,
             percentage: 50
         },{
             source: 'Twitter',
-            visitor: '1,795',
+            visitor: 1795,
             percentage: 40
         },{
             source: 'LinkedIn',
-            visitor: '62',
+            visitor: 62,
             percentage: 10
         }]
     }])

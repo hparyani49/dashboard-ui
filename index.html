@@ -4,7 +4,6 @@
     <title>Assignment</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./index.css">
-    <!-- <link rel="stylesheet" href="./font-awesome.min.css"> -->
 </head>
 
 <body>
@@ -78,6 +77,26 @@
                         </select>
                     </div>
                 </div>
+                <div class="graph-container">
+                    <div class="divider"></div>
+                    <div class="divider"></div>
+                    <div class="divider"></div>
+                    <div class="divider"></div>
+                    <div class="x-axis">
+                        <div class="coord" ng-repeat="x in [].constructor(31) track by $index">{{$index + 1}}</div>
+                    </div>
+                    <div class="y-axis">
+                        <div class="y-coord">300</div>
+                        <div class="y-coord">200</div>
+                        <div class="y-coord">100</div>
+                        <div class="y-coord"></div>
+                    </div>
+                    <div class="x-axis bars">
+                        <div class="coord-bar" ng-repeat="visits in dailyVisits track by $index">
+                            <div ng-style="{'height': '{{visits}}px'}" class="coord-bar-filled"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="tiles-holder">
                 <div class="each-tile" ng-repeat="tile in tiles" ng-class="{'down': tile.isDown}">
@@ -104,8 +123,8 @@
                     </div>
                     <div class="each-row" ng-repeat="page in mostVisitedPages">
                         <div class="width-30 page-name"><div>{{page.pageName}}</div><i class="fa fa-external-link m-r-20"></i></div>
-                        <div class="width-15">{{page.visitor}}</div>
-                        <div class="width-20">{{page.uniqueVisitor}}</div>
+                        <div class="width-15">{{page.visitor | number : fractionSize}}</div>
+                        <div class="width-20">{{page.uniqueVisitor | number : fractionSize}}</div>
                         <div class="width-15">{{page.bounceRate}}</div>
                         <div class="width-20"></div>
                     </div>
@@ -121,7 +140,7 @@
                     </div>
                     <div class="each-row" ng-repeat="page in socialMediaTraffic">
                         <div class="width-25">{{page.source}}</div>
-                        <div class="width-25">{{page.visitor}}</div>
+                        <div class="width-25">{{page.visitor | number : fractionSize}}</div>
                         <div class="width-50 social-media-graph">
                             <div ng-style="{'width': '{{page.percentage}}%'}" class="graph-width"></div>
                         </div>

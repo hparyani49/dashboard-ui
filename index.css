@@ -9,6 +9,8 @@
     top: 0;
     border-bottom: 1px solid #EDEDED;
     display: flex;
+    z-index: 2;
+    background: white;
 }
 .dashboard .header .left-section{
     min-width: 300px;
@@ -32,11 +34,14 @@
     font-size: 14px;
     display: flex;
     padding: 10px 15px 10px 10px;
-    width: 90px;
+    width: 100px;
     justify-content: space-between;
     border: 1px solid #EDEDED;
     border-radius: 5px;
     background: white;
+}
+.dropdown-holder:active, .dropdown-holder:focus{
+    outline: none;
 }
 .dropdown-holder .text-holder{
     margin-left: -20px;
@@ -260,7 +265,51 @@
     height: 100%;
     background: #1390D3;
 }
-
+.graph-container{
+    margin: 0 35px;
+    position: relative;
+}
+.graph-container .y-axis{
+    position: absolute;
+    right: -30px;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #7d7d7d;
+}
+.graph-container .coord{
+    width: 10px;
+}
+.graph-container .x-axis{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #7D7D7D;
+}
+.graph-container .x-axis.bars{
+    position: absolute;
+    width: 100%;
+    bottom: 14px;
+    transform: rotateZ(180deg);
+}
+.graph-container .coord-bar{
+    width: 10px;
+}
+.graph-container .coord-bar-filled{
+    transition: all 0.3s ease;
+    height: 0;
+    background: #1390D3;
+}
+.graph-container .coord-bar-filled:hover{
+    background: #437dff;
+}
+.graph-container .divider{
+    height: 74px;
+    border-bottom: 1px solid #EDEDED;
+}
 /*-------------------Common----------------------*/
 .font-600{font-weight: 600;}
 .subheading{margin-top: 10px;color: #7d7d7d;}
