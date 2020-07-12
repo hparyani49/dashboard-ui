@@ -1,0 +1,137 @@
+<html>
+
+<head>
+    <title>Assignment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./index.css">
+    <!-- <link rel="stylesheet" href="./font-awesome.min.css"> -->
+</head>
+
+<body>
+    <div ng-app="myApp" class="dashboard">
+        <div class="header" ng-controller="header">
+            <div class="left-section"><i class="fa fa-home"></i></div>
+            <div class="right-section">
+                <div class="font-600">Dashboard</div>
+                <select class="dropdown-holder">
+                    <option class="each-option" value="$index" ng-repeat="lang in languages">
+                        <i class="fa fa-window-close {{lang.flagClass}}"></i>
+                        <div class="text-holder">{{lang.language}}</div>
+                        <i class="fa fa-arrows-v"></i>
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="left-menu-container" ng-controller="leftController">
+            <div class="profile-holder">
+                <div class="img-holder">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRL7AAcDunPW1eZfu2ox2_zRvSDlZRFWCG_Rg&usqp=CAU"
+                        class="profile-img">
+                    <i class="fa fa-gear"></i>
+                </div>
+                <div class="heading">Hitesh <div class="green-dot"></div>
+                </div>
+                <div class="subheading">Developer</div>
+            </div>
+            <div class="menu-holder">
+                <div class="each-option" ng-repeat="item in leftArr track by $index" ng-class="{'active': $index == leftArrActive}">
+                    <div class="main-sec" ng-click="selectOption($index)">
+                        <div class="icon-label">
+                            <i class="left-icon fa {{item.iconClass}}"></i>
+                            <div>{{item.label}}</div>
+                        </div>
+                        <i class="fa right-icon {{item.rightIcon}}" ng-if="item.rightIcon"></i>
+                    </div>
+                    <div ng-if="item.subArr" class="sub-menu">
+                        <div class="sub-item" ng-repeat="subItem in item.subArr track by $index+$subindex"
+                            ng-class="{'active': $index+$subindex == subSecActive}"
+                            ng-click="selectSubSec($index+$subindex)">{{subItem.label}}</div>
+                    </div>
+                </div>
+                <div class="recently-viewed">
+                    <div class="recent-heading">Recently Viewed</div>
+                    <div class="each-option" ng-repeat="item in recentlyViewed">
+                        <div>{{item.label}}</div>
+                        <i class="right-icon fa fa-long-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="heading">Page: {{currentPage}}</div>
+                <div class="subheading">{{pageId}}</div>
+            </div>
+        </div>
+        <div class="scrollable-section" ng-controller='RightController'>
+            <div class="visitor-graph card">
+                <div class="head-part">
+                    <div class="font-600">Daily Visitor</div>
+                    <div class="dropdown-container">
+                        <select class="dropdown-holder">
+                            <option class="each-option" value="$index" ng-repeat="month in months">
+                                <div class="text-holder">{{month}}</div>
+                            </option>
+                        </select>
+                        <select class="dropdown-holder">
+                            <option class="each-option" value="$index" ng-repeat="year in years">
+                                <div class="text-holder">{{year}}</div>
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="tiles-holder">
+                <div class="each-tile" ng-repeat="tile in tiles" ng-class="{'down': tile.isDown}">
+                    <div class="head-text">{{tile.label}}</div>
+                    <div class="count">{{tile.count}}</div>
+                    <div class="percentage" ng-class="{'isDown': tile.isDown}">
+                        {{tile.percentage}}%
+                        <i class="up-icon fa fa-arrow-circle-o-up"></i>
+                        <i class="down-icon fa fa-arrow-circle-o-down"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="metrics-container">
+                <div class="card width-55">
+                    <div class="head-part">
+                        <div class="font-600">Most Visited Pages</div>
+                    </div>
+                    <div class="heading-row">
+                        <div class="width-30">Page Name</div>
+                        <div class="width-15">Visitors</div>
+                        <div class="width-20">Unique Page Visitors</div>
+                        <div class="width-15">Bounce Rate</div>
+                        <div class="width-20"></div>
+                    </div>
+                    <div class="each-row" ng-repeat="page in mostVisitedPages">
+                        <div class="width-30 page-name"><div>{{page.pageName}}</div><i class="fa fa-external-link m-r-20"></i></div>
+                        <div class="width-15">{{page.visitor}}</div>
+                        <div class="width-20">{{page.uniqueVisitor}}</div>
+                        <div class="width-15">{{page.bounceRate}}</div>
+                        <div class="width-20"></div>
+                    </div>
+                </div>
+                <div class="card width-40">
+                    <div class="head-part">
+                        <div class="font-600">Social Media Traffic</div>
+                    </div>
+                    <div class="heading-row">
+                        <div class="width-25">Network</div>
+                        <div class="width-25">Visitors</div>
+                        <div class="width-50"></div>
+                    </div>
+                    <div class="each-row" ng-repeat="page in socialMediaTraffic">
+                        <div class="width-25">{{page.source}}</div>
+                        <div class="width-25">{{page.visitor}}</div>
+                        <div class="width-50 social-media-graph">
+                            <div ng-style="{'width': '{{page.percentage}}%'}" class="graph-width"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
