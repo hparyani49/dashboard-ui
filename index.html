@@ -71,7 +71,7 @@
                             </option>
                         </select>
                         <select class="dropdown-holder" ng-model="activeYear">
-                            <option class="each-option" value="$index" ng-repeat="year in years track by $index"">
+                            <option class="each-option" value={{$index}} ng-repeat="year in years track by $index"">
                                 <div class="text-holder">{{year}}</div>
                             </option>
                         </select>
