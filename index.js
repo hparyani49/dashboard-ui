@@ -140,7 +140,7 @@ angular.module('myApp', [])
             $scope.activeDay = index;
             var el = angular.element(e.target);
             $scope.popoverData = {visitor: $scope.dailyVisits[index], day: index+1 + ' ' + $scope.months[$scope.activeMonth] + ' '+$scope.years[$scope.activeYear]};
-            $scope.popoverStyle = {left: el.prop('offsetLeft')+10, display: 'flex'};
+            $scope.popoverStyle = {left: el.prop('offsetLeft')+15, display: 'flex'};
         }
         $scope.blurDay = function(e){
             $scope.activeDay = null;

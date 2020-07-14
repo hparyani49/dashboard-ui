@@ -98,18 +98,17 @@
     color: #7D7D7D;
 }
 .left-menu-container .menu-holder{
-    margin: 0 25px;
+    margin: 0 30px;
 }
 .left-menu-container .menu-holder .each-option{
     font-size: 13px;
     border-bottom: 1px solid #EDEDED;
     cursor: pointer;
-    max-height: 50px;
+    max-height: 55px;
     overflow: hidden;
     transition: all 0.3s ease;
 }
 .left-menu-container .menu-holder .each-option.active{
-    /* padding: 10px 0; */
     max-height: 300px;
 }
 .left-menu-container .menu-holder .each-option .main-sec{
@@ -117,13 +116,20 @@
     align-items: center;
     justify-content: space-between;
     padding: 15px 0;
+    font-weight: 600;
 }
 .left-menu-container .menu-holder .each-option .main-sec:hover{
     color: #1390D3;
 }
 .left-menu-container .menu-holder .each-option .sub-menu .sub-item{
-    padding: 10px 0 10px 28px;
+    padding: 10px 0 10px 34px;
     color: #7D7D7D;
+}
+.left-menu-container .menu-holder .each-option .sub-menu .sub-item:first-child{
+    padding-top: 5px;
+}
+.left-menu-container .menu-holder .each-option .sub-menu .sub-item:last-child{
+    padding-bottom: 15px;
 }
 .left-menu-container .menu-holder .each-option .sub-menu .sub-item:hover{
     color: #1390D3;
@@ -133,7 +139,7 @@
     align-items: center;
 }
 .left-menu-container .menu-holder .each-option .left-icon{
-    font-size: 18px;
+    font-size: 24px;
     margin-right: 10px;
     color: #9f9f9f;
 }
@@ -161,7 +167,7 @@
     position: absolute;
     bottom: 0;
     font-size: 13px;
-    padding: 20px 25px;
+    padding: 20px 30px;
     width: calc(100% - 50px);
     border-top: 1px solid #EDEDED;
 }
@@ -198,7 +204,7 @@
     justify-content: space-between;
 }
 .scrollable-section .tiles-holder .each-tile{
-    width: 257px;
+    width: calc(100%/4 - 96px);
     height: 215px;
     padding: 35px;
     box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1);
