@@ -33,14 +33,14 @@ angular.module('myApp', [])
             iconClass: 'fa-calendar-plus-o'
         }, {
             label: 'Inbox',
-            iconClass: 'fa-inbox',
+            iconClass: 'fa-calculator',
             isActive: false,
             rightIcon: 'fa-arrows-v',
             subArr: [{ label: 'Messages' }, { label: 'Tweets' }]
         }, {
             label: 'Invoicing',
             isActive: false,
-            iconClass: 'fa-credit-card'
+            iconClass: 'fa-archive'
         }, {
             label: 'Lab / Experimental',
             isActive: false,

@@ -122,7 +122,7 @@
     color: #1390D3;
 }
 .left-menu-container .menu-holder .each-option .sub-menu .sub-item{
-    padding: 10px 0 10px 34px;
+    padding: 10px 0 10px 39px;
     color: #7D7D7D;
 }
 .left-menu-container .menu-holder .each-option .sub-menu .sub-item:first-child{
@@ -140,7 +140,7 @@
 }
 .left-menu-container .menu-holder .each-option .left-icon{
     font-size: 24px;
-    margin-right: 10px;
+    margin-right: 15px;
     color: #9f9f9f;
 }
 .left-menu-container .menu-holder .each-option.active .left-icon, .left-menu-container .menu-holder .each-option.active .right-icon, .left-menu-container .menu-holder .each-option .sub-menu .sub-item.active{
