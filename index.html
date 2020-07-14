@@ -86,9 +86,9 @@
                         <div class="coord" ng-repeat="x in [].constructor(31) track by $index">{{$index + 1}}</div>
                     </div>
                     <div class="y-axis">
-                        <div class="y-coord">300</div>
-                        <div class="y-coord">200</div>
+                        <div class="y-coord">150</div>
                         <div class="y-coord">100</div>
+                        <div class="y-coord">50</div>
                         <div class="y-coord"></div>
                     </div>
                     <div class="x-axis bars">
@@ -114,23 +114,23 @@
                 </div>
             </div>
             <div class="metrics-container">
-                <div class="card width-55">
+                <div class="card width-60 m-r-35">
                     <div class="head-part">
                         <div class="font-600">Most Visited Pages</div>
                     </div>
                     <div class="heading-row">
                         <div class="width-30">Page Name</div>
                         <div class="width-15">Visitors</div>
-                        <div class="width-20">Unique Page Visitors</div>
+                        <div class="width-25">Unique Page Visitors</div>
                         <div class="width-15">Bounce Rate</div>
-                        <div class="width-20"></div>
+                        <div class="width-15"></div>
                     </div>
                     <div class="each-row" ng-repeat="page in mostVisitedPages">
                         <div class="width-30 page-name"><div>{{page.pageName}}</div><i class="fa fa-external-link m-r-20"></i></div>
                         <div class="width-15">{{page.visitor | number : fractionSize}}</div>
-                        <div class="width-20">{{page.uniqueVisitor | number : fractionSize}}</div>
+                        <div class="width-25">{{page.uniqueVisitor | number : fractionSize}}</div>
                         <div class="width-15">{{page.bounceRate}}</div>
-                        <div class="width-20"></div>
+                        <div class="width-15"></div>
                     </div>
                 </div>
                 <div class="card width-40">

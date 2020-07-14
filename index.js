@@ -62,7 +62,7 @@ angular.module('myApp', [])
         }
     }])
     .controller('RightController', ['$scope','$timeout', function ($scope,$timeout) {
-        $scope.dailyVisits = [100,220,120,140,150,80,160,110,170,250,300,170,160,100,80,120,130,180,140,210,230,185,200,100,115,135,270,180,100,60,140].reverse();
+        $scope.dailyVisits = [100,220,120,140,150,80,160,110,170,50,70,170,160,100,80,120,130,90,140,30,40,185,200,100,115,135,105,180,100,60,140].reverse();
         $scope.months = ['January','February','March','April','June','July','August','September','October','November','December'];
         $scope.years = ['2018','2019','2020'];
         $scope.activeMonth = 0;
